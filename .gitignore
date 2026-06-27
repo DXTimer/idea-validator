@@ -1,0 +1,8 @@
+# Validation runs produced by the skill (these are user output, not source)
+idea-validations/
+
+# OS / editor cruft
+.DS_Store
+*.swp
+.idea/
+.vscode/
