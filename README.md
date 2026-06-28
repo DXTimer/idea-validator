@@ -62,30 +62,16 @@ Everything important is decided *with* you, not for you.
 
 ---
 
-## Two ways to use it
-
-### A) The demo workspace (recommended for the talk) — local-only, no global install
-
-A sibling folder `../idea-validator-demo/` is set up so the skill is available **only
-when you open Claude Code in that folder**, never globally:
-
-```bash
-cd ../idea-validator-demo
-claude
-# then:  /validate-idea <your idea>
-```
-
-Reports land in `idea-validator-demo/idea-validations/<date>-<slug>/`, so the demo shows
-files appearing live. See that folder's README for details. (It's wired via a project-local
-`.claude/skills/validate-idea` symlink back to this repo, so skill edits show up there instantly.)
-
-### B) Install globally
+## Install
 
 ```bash
 ./install.sh          # symlinks the skill into ~/.claude/skills/validate-idea
 ```
 
 Then `/validate-idea` works in any session. Uninstall: `rm ~/.claude/skills/validate-idea`.
+
+Reports land in `idea-validations/<date>-<slug>/` in your current working directory, so you
+can watch the files appear live as the panel runs.
 
 ---
 
@@ -138,7 +124,7 @@ idea-validator/
 
 ---
 
-## Design notes (for the talk)
+## Design notes
 
 - **The contrast is structural, not stylistic.** Sloan and Dutch get opposite jobs on
   identical input. The five lenses are blind to each other. The Adversary is blind to the
