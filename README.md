@@ -1,23 +1,22 @@
 # Idea Validator
 
-A Claude Code skill that pressure-tests a startup, product, or feature idea through an
-adversarial panel of named sub-agent personas, distills what has to be true for it to
-win, designs the offer that would make the first buyers say yes, and hands you a verdict
-you can act on.
+A Claude Code skill that pressure-tests your startup, product, or feature idea, then tells
+you whether to pursue it and what to test first.
 
-Your own enthusiasm is the least reliable signal there is. This skill is the
-counterweight. It convenes a room of independent characters who haven't seen each
-other's work and can't anchor on your hope, makes them argue, finds the one assumption
-your whole idea rests on, and tells you the cheapest way to find out if it's true (and
-how to get paid while you do).
+It runs a panel of named sub-agents who argue both sides, finds the one assumption
+everything rests on, and designs an offer you could sell today — all written up in one
+linked report.
 
-It's modeled on the spirit of Garry Tan's gstack `plan-ceo-review` (adversarial,
-multi-agent, opinionated, user-sovereign), retargeted from reviewing code plans to
-validating ideas.
+When you're excited about an idea, you're the worst judge of it. This skill gives you the
+room of skeptics and believers you'd want before you commit, each working independently so
+none of them can lean on your hope or on each other's conclusions.
+
+Inspired by Garry Tan's gstack `plan-ceo-review`: the same adversarial, multi-agent,
+opinionated spirit, pointed at validating ideas instead of reviewing code.
 
 ---
 
-## What it actually does
+## What it does
 
 Run `/validate-idea <your idea>` and the skill:
 
@@ -40,7 +39,7 @@ Run `/validate-idea <your idea>` and the skill:
 6. **Finds the cheapest test** — designs the experiment that de-risks the shakiest
    assumption, with kill and success criteria.
 7. **Renders a verdict** — PURSUE / PURSUE-REFRAMED / PARK / PASS, scored against a
-   rubric where one fatal flaw caps the whole thing (an idea is not an average).
+   rubric where one fatal flaw caps the whole score.
 8. **Designs the offer** — **The Closer** builds an irresistible offer and a
    cash-flow-smart price (deposit-for-credit, founding pricing, guarantees) where the
    paid pre-sale *is* the validation test. Money beats words.
@@ -50,7 +49,7 @@ Run `/validate-idea <your idea>` and the skill:
     what-has-to-be-true, panel, the test, the offer, red team) plus ready-to-use
     artifacts: a landing-page prompt, an interview script, and cold outreach.
 
-Everything important is decided *with* you, not for you.
+You make every important call. The skill recommends hard, then leaves the decision to you.
 
 ```mermaid
 flowchart TD
@@ -122,11 +121,11 @@ Swap personas on the fly: *"be my toughest customer Dana"* or *"review it like B
 ## A worked example (real results)
 
 [`skills/validate-idea/examples/2026-06-27-ai-chief-of-staff-solo-founders/`](skills/validate-idea/examples/2026-06-27-ai-chief-of-staff-solo-founders/)
-is a real run of the full gauntlet — produced by the panel with live web research, not
-hand-written. Start with [`index.md`](skills/validate-idea/examples/2026-06-27-ai-chief-of-staff-solo-founders/index.md)
-(the 60-second executive summary) and follow its links. Verdict came out PURSUE-REFRAMED
-at low confidence (effectively a PASS as framed), with a $500 concierge pre-sale designed
-as the validation test. It's the honest output, fatal flaws and all.
+is a real run of the full gauntlet — the panel produced it live with real web research.
+Start with [`index.md`](skills/validate-idea/examples/2026-06-27-ai-chief-of-staff-solo-founders/index.md)
+(the 60-second executive summary) and follow its links. The verdict came out PURSUE-REFRAMED
+at low confidence (effectively a PASS as framed), with a $500 concierge pre-sale as the
+validation test. Fatal flaws and all — that's the real output.
 
 ---
 
@@ -151,16 +150,18 @@ idea-validator/
 
 ## Design notes
 
-- **The contrast is structural, not stylistic.** Sloan and Dutch get opposite jobs on
-  identical input. The five lenses are blind to each other. The Adversary is blind to the
-  panel. Independence is the whole value — that's why it's real sub-agents, not one model
-  wearing six hats.
-- **"What has to be true" is the bridge.** Believers and skeptics aren't the output; the
-  conditions they imply are. The least-certain condition is the bet you have to test.
-- **A fatal flaw caps the score.** Averaging is how bad ideas get a passing grade. One
-  market-of-nobody or zero-moat finding overrides a high total.
-- **Money is the real test.** The offer isn't a side quest. A paid deposit from the exact
-  buyer is the strongest validation signal there is, so the offer is designed to *be* the
-  experiment, with a kill number.
-- **User sovereignty.** The skill never silently defaults a decision you should own. It
-  recommends hard and defers to you.
+- **The disagreement is built in.** Sloan and Dutch get opposite jobs on the same input.
+  The five lenses can't see each other's work, and the Adversary can't see the panel. That
+  independence is the whole point, so each persona runs as its own sub-agent with its own
+  context.
+- **"What has to be true" turns argument into action.** The believers and skeptics each
+  imply a set of conditions. List them, rank them by how shaky they are, and the shakiest
+  one becomes the bet you test first.
+- **One fatal flaw caps the score.** Average the scores and a weak idea slips through with a
+  passing grade. So a single killer finding — no market, no moat — overrides an otherwise
+  high total.
+- **Money is the real test.** A paid deposit from the exact buyer is the strongest signal
+  you can get. The offer is built to *be* that experiment, with a number that tells you when
+  to walk away.
+- **You're in charge.** The skill recommends hard, then hands every real decision back to
+  you.
