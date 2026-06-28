@@ -52,12 +52,37 @@ Run `/validate-idea <your idea>` and the skill:
 
 Everything important is decided *with* you, not for you.
 
-```
-  IDEA ─▶ sharpen ─▶ mode ─▶  Sloan(bull) ⇄ Dutch(bear)   (parallel)
-                                   │
-        Priya·market  Customer  Marcus·competitor  Reggie·operator  Coroner·pre-mortem  (parallel)
-                                   │
-   what-has-to-be-true ─▶ riskiest assumption ─▶ verdict ─▶ The Closer's offer ─▶ The Adversary ─▶ linked report
+```mermaid
+flowchart TD
+    idea([Your idea]) --> sharpen[Sharpen into a testable frame<br/>problem · customer · today · proposal · why-now · wedge]
+    sharpen --> mode{Pick a mode<br/>Gut Check · Full Gauntlet · Kill Mode · Investor Mode}
+    mode --> dialectic
+
+    subgraph dialectic [The dialectic · parallel · opposite jobs on identical input]
+        direction LR
+        sloan[Sloan · repeat founder<br/>strongest honest case FOR]
+        dutch[Dutch · burned operator<br/>strongest honest case AGAINST]
+    end
+
+    dialectic --> panel
+
+    subgraph panel [Specialist panel · parallel · blind to each other]
+        direction LR
+        priya[Priya<br/>market]
+        customer[the Customer<br/>the buyer]
+        marcus[Marcus<br/>competitor]
+        reggie[Reggie<br/>operator]
+        coroner[the Coroner<br/>pre-mortem]
+        gabriela[Gabriela · investor<br/>Investor Mode only]
+    end
+
+    panel --> whtbt[What Has To Be True<br/>conditions ranked by shakiness]
+    whtbt --> risk[Riskiest assumption<br/>the shakiest condition]
+    risk --> test[Cheapest test<br/>kill + success criteria]
+    test --> verdict{{Verdict<br/>PURSUE · PURSUE-REFRAMED · PARK · PASS}}
+    verdict --> closer[The Closer<br/>irresistible offer = the validation test]
+    closer --> adversary[The Adversary<br/>red-teams the verdict, both directions]
+    adversary --> report[(Linked report + artifacts)]
 ```
 
 ---
